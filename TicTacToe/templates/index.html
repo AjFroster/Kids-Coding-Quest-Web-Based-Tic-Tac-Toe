@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Tic Tac Toe: Player {{ current_player }}</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <div class="grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
+                    {% for i in range(9) %}
+                        <div class="text-center border bg-light" style="padding: 20px;">
+                            {% if board[i] == " " %}
+                                <a href="{{ url_for('move', position=i) }}" class="btn btn-primary">Move</a>
+                            {% else %}
+                                <span class="h2">{{ board[i] }}</span>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional: Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js"></script>
+</body>
