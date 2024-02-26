@@ -1,3 +1,5 @@
+# This script sets up a simple Flask application that displays "Hello, World!" on the home page.
+
 from flask import Flask
 
 app = Flask(__name__)
